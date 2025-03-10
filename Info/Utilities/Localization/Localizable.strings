@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Info
+
+  Created by Lisa Fellows on 3/8/25.
+  
+*/
+
+"actionOne" = "Action One";
+"actionTwo" = "Action Two";
+"colorTheme" = "Color Theme";
+"files" = "Files";
+"folders" = "Folders";
+"menu" = "Menu";
