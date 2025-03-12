@@ -9,7 +9,16 @@ import SwiftUI
 
 extension MenuView {
     struct ActionSectionView: View {
+        let isEditing: Bool
         let tintColor: Color
+
+        var body: some View {
+            Section {
+                ForEach(models) {
+                    ListNavLink(model: $0, useIndicator: !isEditing)
+                }
+            }
+        }
 
         private var models: [ListNavLink.Model] {
             [.init(
@@ -24,14 +33,6 @@ extension MenuView {
                 iconImage: .keyboard,
                 tintColor: tintColor
              )]
-        }
-
-        var body: some View {
-            Section {
-                ForEach(models) {
-                    ListNavLink(model: $0)
-                }
-            }
         }
     }
 }

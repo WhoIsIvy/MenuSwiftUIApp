@@ -41,12 +41,7 @@ enum Files {
         ),
     ]
 
-    static func createListNavModels(from list: [FileFolder], for coordinateType: CoordinateType, tintColor: Color) -> [ListNavLink.Model] {
-        switch coordinateType {
-        case .page:
-            return list.map { .init(page: .list, text: $0.title, iconImage: .folder, tintColor: tintColor) }
-        case .sheet:
-            return list.map { .init(sheet: .fileOptions, text: $0.title, iconImage: .folder, tintColor: tintColor) }
-        }
+    static func createListNavModels(from list: [FileFolder], tintColor: Color) -> [ListNavLink.Model] {
+        list.map { .init(page: .list($0.title), text: $0.title, iconImage: .folder, tintColor: tintColor) }
     }
 }

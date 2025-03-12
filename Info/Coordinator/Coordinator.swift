@@ -12,16 +12,20 @@ import SwiftUI
 class Coordinator: ObservableObject {
     @Published var path: NavigationPath = NavigationPath()
     @Published var sheet: Sheet?
+    @Published var pages = [Page]()
 
     func push(page: Page) {
+        pages.append(page)
         path.append(page)
     }
 
     func pop() {
+        pages.removeLast()
         path.removeLast()
     }
 
     func popToRoot() {
+        pages.removeAll()
         path.removeLast(path.count)
     }
 
@@ -39,7 +43,8 @@ class Coordinator: ObservableObject {
         case .menu: MenuView()
         case .actionOne: ActionOneView()
         case .actionTwo: ActionTwoView()
-        case .list: ListView()
+        case .list(let title):
+            ListView(title: title)
         }
     }
 

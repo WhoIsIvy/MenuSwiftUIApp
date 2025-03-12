@@ -13,7 +13,7 @@ enum Page: Hashable {
     case menu
     case actionOne
     case actionTwo
-    case list
+    case list(String)
 }
 
 enum Sheet: String, Identifiable {

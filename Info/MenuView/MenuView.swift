@@ -13,14 +13,14 @@ struct MenuView: View {
     
     @Environment(\.editMode) var editMode
 
-    @State private var searchText = ""
     @State private var isSearching = false
-    
+    @State private var searchText = ""
+
     var body: some View {
         List {
             if !isSearching {
-                ActionSectionView(tintColor: settings.colorTheme.color)
-                FolderSectionView()
+                ActionSectionView(isEditing: isEditing, tintColor: settings.colorTheme.color)
+                FolderSectionView(isEditing: isEditing)
             } else {
                 SearchSectionView(searchText: $searchText, section: .folder)
                 SearchSectionView(searchText: $searchText, section: .files)
@@ -34,10 +34,26 @@ struct MenuView: View {
 
         .navigationTitle(String.localization(key: .menu))
         .toolbar {
-            if !(editMode?.wrappedValue.isEditing ?? false) {
+            if !isEditing {
                 CustomToolbarItem(toolbarType: .colorTheme)
             }
             EditButton()
+        }
+
+        .onChange(of: coordinator.pages) { _, new in
+            updateSearchbar(with: new.last)
+        }
+    }
+
+    var isEditing: Bool { editMode?.wrappedValue.isEditing ?? false }
+
+    func updateSearchbar(with pageInfo: Page?) {
+        if isSearching && searchText.isEmpty {
+            switch pageInfo {
+            case .list(let string):
+                searchText = string
+            default: return
+            }
         }
     }
 }

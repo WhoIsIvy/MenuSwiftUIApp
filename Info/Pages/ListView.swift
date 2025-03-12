@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ListView: View {
+    let title: String
+
     var body: some View {
         Text("Hello World")
+            .navigationTitle(title)
     }
 }

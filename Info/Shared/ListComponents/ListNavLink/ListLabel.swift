@@ -13,12 +13,7 @@ struct ListLabel: View {
     var body: some View {
         Label {
             if let secondaryText = model.secondaryText {
-                Group {
-                    Text(model.text)
-                        .foregroundStyle(.dynamicText)
-                    + Text("\n\(secondaryText)")
-                        .foregroundStyle(.dynamicTextSecondary)
-                }
+                GroupText(primary: model.text, secondary: secondaryText)
             } else {
                 Text(model.text)
                     .foregroundStyle(.dynamicText)

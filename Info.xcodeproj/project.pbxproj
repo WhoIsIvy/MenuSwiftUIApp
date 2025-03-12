@@ -39,6 +39,9 @@
 		048A72482D7D842600C103D9 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A72472D7D842600C103D9 /* SectionHeaderView.swift */; };
 		048A724A2D7D847100C103D9 /* ListLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A72492D7D847100C103D9 /* ListLabel.swift */; };
 		048A724D2D7D854600C103D9 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A724C2D7D854600C103D9 /* Files.swift */; };
+		04EB1EA42D810EF600BC4463 /* GroupText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB1EA32D810EF600BC4463 /* GroupText.swift */; };
+		04EB1EA62D81128E00BC4463 /* ListNavLink+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB1EA52D81128E00BC4463 /* ListNavLink+Model.swift */; };
+		04EB1EA92D81155E00BC4463 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB1EA82D81155E00BC4463 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,9 @@
 		048A72472D7D842600C103D9 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		048A72492D7D847100C103D9 /* ListLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLabel.swift; sourceTree = "<group>"; };
 		048A724C2D7D854600C103D9 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		04EB1EA32D810EF600BC4463 /* GroupText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupText.swift; sourceTree = "<group>"; };
+		04EB1EA52D81128E00BC4463 /* ListNavLink+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListNavLink+Model.swift"; sourceTree = "<group>"; };
+		04EB1EA82D81155E00BC4463 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,12 +155,13 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		0474692C2D7EBD5200A49536 /* ImageHelper */ = {
+		0474692C2D7EBD5200A49536 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				04EB1EA82D81155E00BC4463 /* Extensions.swift */,
 				048A722F2D7D2BE200C103D9 /* SystemImageHelper.swift */,
 			);
-			path = ImageHelper;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		047BA72B2D7E72DD00FDF951 /* Coordinator */ = {
@@ -191,13 +198,13 @@
 			isa = PBXGroup;
 			children = (
 				048A71B92D7BCB7300C103D9 /* InfoApp.swift */,
+				048A71BD2D7BCB7400C103D9 /* Assets.xcassets */,
 				047BA72B2D7E72DD00FDF951 /* Coordinator */,
 				048A724E2D7D8B8E00C103D9 /* MenuView */,
 				047469272D7EB7BE00A49536 /* Pages */,
 				047469282D7EBC7E00A49536 /* Sheets */,
 				047469292D7EBC8A00A49536 /* Shared */,
 				048A723B2D7D500600C103D9 /* Utilities */,
-				048A71BD2D7BCB7400C103D9 /* Assets.xcassets */,
 				048A71BF2D7BCB7400C103D9 /* Preview Content */,
 			);
 			path = Info;
@@ -251,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				048A723C2D7D500E00C103D9 /* Localization */,
-				0474692C2D7EBD5200A49536 /* ImageHelper */,
+				0474692C2D7EBD5200A49536 /* Helpers */,
 				048A723D2D7D502000C103D9 /* Settings */,
 			);
 			path = Utilities;
@@ -289,8 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				048A72472D7D842600C103D9 /* SectionHeaderView.swift */,
-				048A72452D7D83FC00C103D9 /* ListNavLink.swift */,
-				048A72492D7D847100C103D9 /* ListLabel.swift */,
+				04EB1EA72D8112AB00BC4463 /* ListNavLink */,
 			);
 			path = ListComponents;
 			sourceTree = "<group>";
@@ -304,6 +310,17 @@
 				0474691F2D7EA2C000A49536 /* MenuView+SearchSectionView.swift */,
 			);
 			path = MenuView;
+			sourceTree = "<group>";
+		};
+		04EB1EA72D8112AB00BC4463 /* ListNavLink */ = {
+			isa = PBXGroup;
+			children = (
+				048A72452D7D83FC00C103D9 /* ListNavLink.swift */,
+				04EB1EA52D81128E00BC4463 /* ListNavLink+Model.swift */,
+				048A72492D7D847100C103D9 /* ListLabel.swift */,
+				04EB1EA32D810EF600BC4463 /* GroupText.swift */,
+			);
+			path = ListNavLink;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,12 +455,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				047BA72D2D7E745100FDF951 /* ToolbarType.swift in Sources */,
+				04EB1EA62D81128E00BC4463 /* ListNavLink+Model.swift in Sources */,
 				048A72302D7D2BE200C103D9 /* SystemImageHelper.swift in Sources */,
 				047BA7282D7E71D300FDF951 /* CoordinateType.swift in Sources */,
 				048A72202D7D189500C103D9 /* Settings.swift in Sources */,
 				048A71BC2D7BCB7300C103D9 /* MenuView.swift in Sources */,
 				048A72382D7D4E0100C103D9 /* HalfSheetTitleBar.swift in Sources */,
 				047BA7222D7E6CEB00FDF951 /* MenuView+FolderSectionView.swift in Sources */,
+				04EB1EA42D810EF600BC4463 /* GroupText.swift in Sources */,
 				048A724A2D7D847100C103D9 /* ListLabel.swift in Sources */,
 				047BA7202D7E6CC500FDF951 /* MenuView+ActionSectionView.swift in Sources */,
 				0474692B2D7EBCB100A49536 /* ColorTheme.swift in Sources */,
@@ -455,6 +474,7 @@
 				047469222D7EB7AC00A49536 /* ActionOneView.swift in Sources */,
 				048A72322D7D303C00C103D9 /* SheetDismissButton.swift in Sources */,
 				048A72462D7D83FC00C103D9 /* ListNavLink.swift in Sources */,
+				04EB1EA92D81155E00BC4463 /* Extensions.swift in Sources */,
 				048A72282D7D20C100C103D9 /* ColorThemeSelectorView.swift in Sources */,
 				047BA71E2D7E511F00FDF951 /* Coordinator.swift in Sources */,
 				048A724D2D7D854600C103D9 /* Files.swift in Sources */,

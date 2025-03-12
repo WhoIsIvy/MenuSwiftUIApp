@@ -10,11 +10,12 @@ import SwiftUI
 extension MenuView {
     struct FolderSectionView: View {
         @EnvironmentObject private var settings: Settings
+        let isEditing: Bool
 
         var body: some View {
             Section(header: SectionHeaderView(headerTitle: .localization(key: .folders))) {
                 ForEach(models(from: settings)) {
-                    ListNavLink(model: $0)
+                    ListNavLink(model: $0, useIndicator: !isEditing)
                 }
                 .onMove(perform: moveAffirmationFolder)
             }
@@ -23,7 +24,6 @@ extension MenuView {
         private func models(from settings: Settings) -> [ListNavLink.Model] {
             Files.createListNavModels(
                 from: settings.fileFolders,
-                for: .sheet,
                 tintColor: settings.colorTheme.color
             )
         }

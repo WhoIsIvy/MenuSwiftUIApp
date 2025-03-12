@@ -13,6 +13,7 @@ enum SystemImageHelper: String {
     case clock
     case documentText = "doc.plaintext"
     case folder
+    case infoCircle = "info.circle"
     case keyboard
     case paintpalette
     case speedometer

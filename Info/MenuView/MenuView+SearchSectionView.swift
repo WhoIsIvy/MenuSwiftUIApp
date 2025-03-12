@@ -18,7 +18,7 @@ extension MenuView {
         var body: some View {
             Section(header: SectionHeaderView(headerTitle: sectionTitle)) {
                 ForEach(models) {
-                    ListNavLink(model: $0)
+                    ListNavLink(model: $0, useIndicator: false)
                 }
             }
         }
@@ -39,11 +39,9 @@ extension MenuView {
             }
         }
         
-        // MARK: Folder Methods
         private func folderSearchResults(from searchText: String) -> [ListNavLink.Model] {
             let models = Files.createListNavModels(
                 from: settings.fileFolders,
-                for: .page,
                 tintColor: settings.colorTheme.color
             )
             
@@ -51,7 +49,6 @@ extension MenuView {
             return models.filter { $0.text.lowercased().contains(searchText.lowercased()) }
         }
         
-        // MARK: File Methods
         private func fileSearchResults(from searchText: String) -> [ListNavLink.Model] {
             settings.fileFolders.map {
                 fileResults(searchText, shouldFilter: !searchText.isEmpty, inFolder: $0)
@@ -62,7 +59,7 @@ extension MenuView {
             folder.affirmations.map {
                 if shouldFilter, !$0.lowercased().contains(searchText.lowercased()) { return nil }
                 return .init(
-                    page: .list,
+                    page: .list($0),
                     text: $0,
                     secondaryText: folder.title,
                     iconImage: .documentText,

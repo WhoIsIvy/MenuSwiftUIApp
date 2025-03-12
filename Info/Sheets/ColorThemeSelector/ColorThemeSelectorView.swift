@@ -58,4 +58,3 @@ struct ColorThemeSelectorView: View {
         .environmentObject(Coordinator())
         .environmentObject(Settings())
 }
-

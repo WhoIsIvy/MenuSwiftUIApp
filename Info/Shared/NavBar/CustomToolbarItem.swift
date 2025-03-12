@@ -16,13 +16,10 @@ struct CustomToolbarItem: View {
         Button {
             coordinate()
         } label: {
-            Label {} icon: { if let image = image { image } }
+            if let icon = toolbarType.iconImage {
+                Label {} icon: { Image(systemHelper: icon) }
+            }
         }
-    }
-
-    private var image: Image? {
-        guard let icon = toolbarType.iconImage else { return nil }
-        return Image(systemHelper: icon)
     }
 
     private func coordinate() {
