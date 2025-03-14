@@ -21,7 +21,9 @@ struct CustomToolbarItem: View {
             }
         }
     }
+}
 
+extension CustomToolbarItem {
     private func coordinate() {
         if let page = toolbarType.pageType {
             coordinator.push(page: page)

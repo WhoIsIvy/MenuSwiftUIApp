@@ -21,9 +21,9 @@ struct HalfSheetTitleBar: View {
     }
 }
 
-#Preview {
-    HalfSheetTitleBar(model: .sample)
-        .environmentObject(Coordinator())
-        .environmentObject(Settings())
-}
+//#Preview {
+//    HalfSheetTitleBar(model: .sample)
+//        .environmentObject(Coordinator())
+//        .environmentObject(Settings())
+//}
 

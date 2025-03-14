@@ -33,7 +33,7 @@ extension HalfSheetTitleView {
     }
 }
 
-#Preview {
-    HalfSheetTitleView(model: .sample)
-        .environmentObject(Settings())
-}
+//#Preview {
+//    HalfSheetTitleView(model: .sample)
+//        .environmentObject(Settings())
+//}

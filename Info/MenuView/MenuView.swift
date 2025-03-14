@@ -19,14 +19,23 @@ struct MenuView: View {
     var body: some View {
         List {
             if !isSearching {
-                ActionSectionView(isEditing: isEditing, tintColor: settings.colorTheme.color)
-                FolderSectionView(isEditing: isEditing)
+                Group {
+                    ActionSectionView(isEditing: isEditing, tintColor: settings.colorTheme.color)
+                    FolderSectionView(isEditing: isEditing)
+                }
+                .listRowBackground(Color.baseSecondary)
+                
             } else {
-                SearchSectionView(searchText: $searchText, section: .folder)
-                SearchSectionView(searchText: $searchText, section: .files)
+                Group {
+                    SearchSectionView(searchText: $searchText, section: .folder)
+                    SearchSectionView(searchText: $searchText, section: .files)
+                }
+                .listRowBackground(Color.baseSecondary)
             }
         }
         .listStyle(InsetGroupedListStyle())
+        .scrollContentBackground(.hidden)
+        .background(Color.basePrimary)
         .searchable(text: $searchText, isPresented: $isSearching)
 
         .environmentObject(coordinator)
@@ -44,8 +53,12 @@ struct MenuView: View {
             updateSearchbar(with: new.last)
         }
     }
+}
 
-    var isEditing: Bool { editMode?.wrappedValue.isEditing ?? false }
+extension MenuView {
+    private var isEditing: Bool {
+        editMode?.wrappedValue.isEditing ?? false
+    }
 
     func updateSearchbar(with pageInfo: Page?) {
         if isSearching && searchText.isEmpty {
@@ -56,11 +69,4 @@ struct MenuView: View {
             }
         }
     }
-}
-
-#Preview {
-    MenuView()
-        .environmentObject(Coordinator())
-        .environmentObject(Settings())
-        .environment(\.editMode, .constant(.inactive))
 }

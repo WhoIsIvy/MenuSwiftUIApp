@@ -40,7 +40,6 @@
 		048A724A2D7D847100C103D9 /* ListLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A72492D7D847100C103D9 /* ListLabel.swift */; };
 		048A724D2D7D854600C103D9 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A724C2D7D854600C103D9 /* Files.swift */; };
 		04EB1EA42D810EF600BC4463 /* GroupText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB1EA32D810EF600BC4463 /* GroupText.swift */; };
-		04EB1EA62D81128E00BC4463 /* ListNavLink+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB1EA52D81128E00BC4463 /* ListNavLink+Model.swift */; };
 		04EB1EA92D81155E00BC4463 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB1EA82D81155E00BC4463 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +97,6 @@
 		048A72492D7D847100C103D9 /* ListLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLabel.swift; sourceTree = "<group>"; };
 		048A724C2D7D854600C103D9 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		04EB1EA32D810EF600BC4463 /* GroupText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupText.swift; sourceTree = "<group>"; };
-		04EB1EA52D81128E00BC4463 /* ListNavLink+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListNavLink+Model.swift"; sourceTree = "<group>"; };
 		04EB1EA82D81155E00BC4463 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -316,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				048A72452D7D83FC00C103D9 /* ListNavLink.swift */,
-				04EB1EA52D81128E00BC4463 /* ListNavLink+Model.swift */,
 				048A72492D7D847100C103D9 /* ListLabel.swift */,
 				04EB1EA32D810EF600BC4463 /* GroupText.swift */,
 			);
@@ -455,7 +452,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				047BA72D2D7E745100FDF951 /* ToolbarType.swift in Sources */,
-				04EB1EA62D81128E00BC4463 /* ListNavLink+Model.swift in Sources */,
 				048A72302D7D2BE200C103D9 /* SystemImageHelper.swift in Sources */,
 				047BA7282D7E71D300FDF951 /* CoordinateType.swift in Sources */,
 				048A72202D7D189500C103D9 /* Settings.swift in Sources */,

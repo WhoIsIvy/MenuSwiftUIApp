@@ -19,20 +19,23 @@ extension MenuView {
                 }
             }
         }
-
-        private var models: [ListNavLink.Model] {
-            [.init(
-                page: .actionOne,
-                text: .localization(key: .actionOne),
-                iconImage: .tv,
-                tintColor: tintColor
-            ),
-             .init(
-                page: .actionTwo,
-                text: .localization(key: .actionTwo),
-                iconImage: .keyboard,
-                tintColor: tintColor
-             )]
-        }
     }
+}
+
+extension MenuView.ActionSectionView {
+    private var models: [ListNavLink.Model] {
+        [.init(
+            page: .actionOne,
+            text: .localization(key: .actionOne),
+            iconImage: .tv,
+            tintColor: tintColor
+        ),
+         .init(
+            page: .actionTwo,
+            text: .localization(key: .actionTwo),
+            iconImage: .keyboard,
+            tintColor: tintColor
+         )]
+    }
+
 }

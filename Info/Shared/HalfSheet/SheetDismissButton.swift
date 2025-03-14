@@ -29,7 +29,7 @@ struct SheetDismissButton: View {
     }
 }
 
-#Preview {
-    SheetDismissButton(tintColor: .customGreen)
-        .environmentObject(Coordinator())
-}
+//#Preview {
+//    SheetDismissButton(tintColor: .customGreen)
+//        .environmentObject(Coordinator())
+//}

@@ -39,6 +39,7 @@ struct ColorThemeSelectorView: View {
 
                 Spacer()
             }
+            .background(.baseSecondary)
             .onAppear {
                 width = geometry.size.width
             }

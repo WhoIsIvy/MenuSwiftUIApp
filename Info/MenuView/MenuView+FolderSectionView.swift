@@ -20,16 +20,18 @@ extension MenuView {
                 .onMove(perform: moveAffirmationFolder)
             }
         }
+    }
+}
 
-        private func models(from settings: Settings) -> [ListNavLink.Model] {
-            Files.createListNavModels(
-                from: settings.fileFolders,
-                tintColor: settings.colorTheme.color
-            )
-        }
+extension MenuView.FolderSectionView {
+    private func models(from settings: Settings) -> [ListNavLink.Model] {
+        Files.createListNavModels(
+            from: settings.fileFolders,
+            tintColor: settings.colorTheme.color
+        )
+    }
 
-        private func moveAffirmationFolder(fromOffsets: IndexSet, toOffset: Int) {
-            settings.fileFolders.move(fromOffsets: fromOffsets, toOffset: toOffset)
-        }
+    private func moveAffirmationFolder(fromOffsets: IndexSet, toOffset: Int) {
+        settings.fileFolders.move(fromOffsets: fromOffsets, toOffset: toOffset)
     }
 }
